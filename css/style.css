@@ -72,13 +72,17 @@ h2 {
 
 /*Data-table-transacion======================= */
 
+.container-table {
+    overflow: auto;
+}
+
 #data-table-transaction {
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
 }
 
-#data-table-transaction thead tr th:first-child,
+#table thead tr th:first-child,
 #data-table-transaction tbody tr td:first-child {
     border-radius: 0.25rem 0 0 0.25rem;
 }

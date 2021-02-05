@@ -11,3 +11,8 @@ Projeto criado em conjunto com o professor Mayk Brito, da Rockseat, na maratona 
   - Add file index.html
   - Add file style.css
   - Add folder css
+
+### v0.1
+Correçao do problema de responsividade da tabela ```#data-table-transaction``` utilizando uma div container (```.container-table```) e a propriedade ```overflow: auto;```
+ - Edit file style.css
+ - Edit file index.html
