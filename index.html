@@ -27,27 +27,27 @@
                     <span>Entrada</span>
                     <img src="./assets/income.svg" alt="Entrada">
                 </h3>
-                <p>R$ 5000,00</p>
+                <p id="incomeDisplay"></p>
             </div>
             <div class="card">
                 <h3>
                     <span>Saídas</span>
                     <img src="./assets/expense.svg" alt="Entrada">
                 </h3>
-                <p>R$ 2000.00</p>
+                <p id="expenseDisplay"></p>
             </div>
             <div class="card total">
                 <h3>
                     <span>Total</span>
                     <img src="./assets/total.svg" alt="Entrada">
                 </h3>
-                <p>R$ 3000,00</p>
+                <p id="totalDisplay"></p>
             </div>
         </section>
 
         <section id="transaction">
             <h2>Transições</h2>
-            <a href="#" onclick="Modal.open()" class="button new"> + Nova transição</a>
+            <a href="#" onclick="Modal.open();" class="button new"> + Nova transição</a>
             <div class="container-data-table">
                 <table id="data-table-transaction">
                     <thead>
@@ -59,24 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="description">Luz</td>
-                            <td class="expense">- R$ 500,00</td>
-                            <td class="data">24/11/2011</td>
-                            <td> <img src="./assets/minus.svg"> </td>
-                        </tr>
-                        <tr>
-                            <td class="description">Site</td>
-                            <td class="income">R$4000,00</td>
-                            <td class="data">11/02/2020</td>
-                            <td> <img src="./assets/minus.svg"> </td>
-                        </tr>
-                        <tr>
-                            <td class="description">Telefone</td>
-                            <td class="expense">- R$450,00</td>
-                            <td class="data">26/01/2021</td>
-                            <td> <img src="./assets/minus.svg"> </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -85,22 +68,22 @@
     <div class="modal-overlay">
         <div class="modal">
             <h2>Nova Transação</h2>
-            <form action="">
+            <form action="" onsubmit="Form.submit(event)">
                 <div class="input-group">
                     <label for="description" class="sr-only">Descrição</label>
-                    <input type="text" id="description" name="description" placeholder="Descrição">
+                    <input type="text" id="description" name="description" placeholder="Descrição" required>
                 </div>
                 <div class="input-group">
                     <label for="amount" class="sr-only">Valor</label>
-                    <input type="number" id="amount" name="amount" placeholder="Valor">
+                    <input type="number" id="amount" name="amount" step="0.01" placeholder="Valor" required>
                     <small>Use o sinal - (negativo) para desepesa e, (vírgula) para casas decimais.</small>
                 </div>
                 <div class="input-group">
                     <label for="date" class="sr-only">Data</label>
-                    <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+                    <input type="date" id="date" name="date" placeholder="dd/mm/yyyy" required>
                 </div>
                 <div class="input-group actions">
-                    <a  onclick="Modal.close()" href="#" class="button cancel"> Cancelar</a>
+                    <a onclick="Modal.close();" href="#" class="button cancel"> Cancelar</a>
                     <button>Salvar</button>
                 </div>
             </form>
@@ -110,15 +93,8 @@
         <p>dev.finance$</p>
     </footer>
 
-    <script>
-        const Modal = {
-            open() {
-                document.querySelector('.modal-overlay').classList.add('active')
-            },
-            close() {
-                document.querySelector('.modal-overlay').classList.remove('active')
-            }
-        }
+    <script src="./script.js">
+
     </script>
 </body>
 
